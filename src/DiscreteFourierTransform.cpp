@@ -7,6 +7,8 @@
 
 
 DiscreteFourierTransform::DiscreteFourierTransform(size_t k, size_t N) :
+    m_k { k },
+    m_N { N },
     m_exp(N)
 {
     std::valarray<fp_t> ns(N);
@@ -33,7 +35,17 @@ DiscreteFourierTransform::~DiscreteFourierTransform()
 
 std::complex<fp_t> DiscreteFourierTransform::compute(const std::valarray<fp_t> &samples)
 {
-    std::complex<fp_t> result;
+    std::complex<fp_t> result { 0.0, 0.0 };
+    size_t n = 0;
+
+    while (n < m_N)
+    {
+        std::complex<fp_t> s { samples[n], 0.0 };
+
+        result += (s * m_exp[n]);
+
+        ++n;
+    }
 
     return result;
 }

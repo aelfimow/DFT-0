@@ -12,6 +12,8 @@ class DiscreteFourierTransform
         std::complex<fp_t> compute(const std::valarray<fp_t> &samples);
 
     private:
+        const size_t m_k;
+        const size_t m_N;
         std::valarray<std::complex<fp_t>> m_exp;
 
     public:
