@@ -6,12 +6,16 @@
 class DiscreteFourierTransform
 {
     public:
-        DiscreteFourierTransform();
+        explicit DiscreteFourierTransform(size_t k, size_t N);
         ~DiscreteFourierTransform();
 
         std::complex<fp_t> compute(const std::valarray<fp_t> &samples);
 
+    private:
+        std::valarray<std::complex<fp_t>> m_exp;
+
     public:
+        DiscreteFourierTransform() = delete;
         DiscreteFourierTransform(const DiscreteFourierTransform &instance) = delete;
         DiscreteFourierTransform(const DiscreteFourierTransform &&instance) = delete;
         DiscreteFourierTransform &operator=(const DiscreteFourierTransform &instance) = delete;
