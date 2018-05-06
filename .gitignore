@@ -1,2 +1,2 @@
-src\*.o
-src\*.exe
+src/*.o
+src/*.exe
