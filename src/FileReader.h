@@ -9,6 +9,8 @@ class FileReader
         FileReader(const TCHAR *pName);
         ~FileReader();
 
+        std::vector<uint8_t> read(size_t maxBytes);
+
     private:
         const HANDLE m_hFile;
 
