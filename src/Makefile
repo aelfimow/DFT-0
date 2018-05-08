@@ -10,6 +10,11 @@ CXXFLAGS += -O2
 CXXFLAGS += -m64
 
 OBJ_FILES  = a.o
+OBJ_FILES += b.o
+OBJ_FILES += c.o
 
 all:
-	c++ -c DiscreteFourierTransform.cpp -o a.o ${CXXFLAGS}
+	c++ -c MainWindow.cpp -o c.o ${CXXFLAGS}
+	c++ -c DiscreteFourierTransform.cpp -o b.o ${CXXFLAGS}
+	c++ -c main.cpp -o a.o ${CXXFLAGS}
+	c++ ${OBJ_FILES} -o DFT-0.exe ${CXXFLAGS}
