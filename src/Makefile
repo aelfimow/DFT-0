@@ -13,8 +13,10 @@ OBJ_FILES  = a.o
 OBJ_FILES += b.o
 OBJ_FILES += c.o
 OBJ_FILES += d.o
+OBJ_FILES += e.o
 
 all:
+	c++ -c WM_DESTROY_Handler.cpp -o e.o ${CXXFLAGS}
 	c++ -c FileReader.cpp -o d.o ${CXXFLAGS}
 	c++ -c MainWindow.cpp -o c.o ${CXXFLAGS}
 	c++ -c DiscreteFourierTransform.cpp -o b.o ${CXXFLAGS}
