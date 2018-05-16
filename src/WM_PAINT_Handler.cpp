@@ -17,7 +17,6 @@ LRESULT WM_PAINT_Handler::operator()(HWND hwnd, WPARAM wParam, LPARAM lParam)
 {
     lParam = lParam;
     wParam = wParam;
-    hwnd = hwnd;
 
     PAINTSTRUCT ps;
 
