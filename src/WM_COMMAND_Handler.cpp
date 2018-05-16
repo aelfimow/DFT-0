@@ -6,7 +6,8 @@
 
 
 WM_COMMAND_Handler::WM_COMMAND_Handler() :
-    WndProcHandler {}
+    WndProcHandler {},
+    m_TimerID { 1 }
 {
 }
 
@@ -22,19 +23,19 @@ LRESULT WM_COMMAND_Handler::operator()(HWND hwnd, WPARAM wParam, LPARAM lParam)
 
     if (IDM_APP_START == cmd)
     {
-        (void)::MessageBox(nullptr, TEXT("Start"), TEXT("WM_COMMAND"), 0);
+        ::SetTimer(hwnd, m_TimerID, 10000, nullptr);
         return 0;
     }
 
     if (IDM_APP_STOP == cmd)
     {
-        (void)::MessageBox(nullptr, TEXT("Stop"), TEXT("WM_COMMAND"), 0);
+        ::KillTimer(hwnd, m_TimerID);
         return 0;
     }
 
     if (IDM_APP_EXIT == cmd)
     {
-        PostMessage(hwnd, WM_CLOSE, 0, 0);
+        ::PostMessage(hwnd, WM_CLOSE, 0, 0);
         return 0;
     }
 

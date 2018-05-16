@@ -7,6 +7,7 @@
 #include "WndProcHandler.h"
 #include "WM_DESTROY_Handler.h"
 #include "WM_COMMAND_Handler.h"
+#include "WM_TIMER_Handler.h"
 
 
 MainWindow *MainWindow::Inst = nullptr;
@@ -66,6 +67,7 @@ void MainWindow::Show()
 {
     Inst->m_WndProcMap[WM_DESTROY] = new WM_DESTROY_Handler;
     Inst->m_WndProcMap[WM_COMMAND] = new WM_COMMAND_Handler;
+    Inst->m_WndProcMap[WM_TIMER]   = new WM_TIMER_Handler;
 
     Inst->m_Wndclass.style         = (CS_HREDRAW | CS_VREDRAW);
     Inst->m_Wndclass.lpfnWndProc   = WndProc;
