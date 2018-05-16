@@ -15,8 +15,10 @@ OBJ_FILES += c.o
 OBJ_FILES += d.o
 OBJ_FILES += e.o
 OBJ_FILES += f.o
+OBJ_FILES += g.o
 
 all:
+	c++ -c WM_TIMER_Handler.cpp -o g.o ${CXXFLAGS}
 	c++ -c WM_COMMAND_Handler.cpp -o f.o ${CXXFLAGS}
 	c++ -c WM_DESTROY_Handler.cpp -o e.o ${CXXFLAGS}
 	c++ -c FileReader.cpp -o d.o ${CXXFLAGS}
