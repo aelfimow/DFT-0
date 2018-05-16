@@ -14,8 +14,10 @@ OBJ_FILES += b.o
 OBJ_FILES += c.o
 OBJ_FILES += d.o
 OBJ_FILES += e.o
+OBJ_FILES += f.o
 
 all:
+	c++ -c WM_COMMAND_Handler.cpp -o f.o ${CXXFLAGS}
 	c++ -c WM_DESTROY_Handler.cpp -o e.o ${CXXFLAGS}
 	c++ -c FileReader.cpp -o d.o ${CXXFLAGS}
 	c++ -c MainWindow.cpp -o c.o ${CXXFLAGS}
