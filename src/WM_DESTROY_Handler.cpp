@@ -1,4 +1,5 @@
 #include <Windows.h>
+#include <list>
 
 #include "WndProcHandler.h"
 #include "WM_DESTROY_Handler.h"

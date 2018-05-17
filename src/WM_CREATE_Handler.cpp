@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <vector>
+#include <list>
 #include <cstdint>
 
 #include "WndProcHandler.h"

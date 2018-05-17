@@ -4,6 +4,7 @@
 #define DFT_FILE_H
 
 class FileReader;
+class DiscreteFourierTransform;
 
 class DFT_File
 {
@@ -18,6 +19,7 @@ class DFT_File
         static DFT_File *Inst;
 
         FileReader * const m_FileReader;
+        std::list<DiscreteFourierTransform *> m_DFT_Bank;
 
         explicit DFT_File(FileReader *pFileReader);
 
