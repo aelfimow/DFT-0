@@ -13,14 +13,11 @@ WM_PAINT_Handler::~WM_PAINT_Handler()
 {
 }
 
-LRESULT WM_PAINT_Handler::operator()(HWND hwnd, WPARAM wParam, LPARAM lParam)
+LRESULT WM_PAINT_Handler::operator()(HWND hwnd, [[maybe_unused]] WPARAM wParam, [[maybe_unused]] LPARAM lParam)
 {
-    lParam = lParam;
-    wParam = wParam;
-
     PAINTSTRUCT ps;
 
-    auto hdc = ::BeginPaint(hwnd, &ps);
+    [[maybe_unused]] auto hdc = ::BeginPaint(hwnd, &ps);
 
     ::EndPaint(hwnd, &ps);
 

@@ -13,12 +13,8 @@ WM_TIMER_Handler::~WM_TIMER_Handler()
 {
 }
 
-LRESULT WM_TIMER_Handler::operator()(HWND hwnd, WPARAM wParam, LPARAM lParam)
+LRESULT WM_TIMER_Handler::operator()([[maybe_unused]] HWND hwnd, [[maybe_unused]] WPARAM wParam, [[maybe_unused]] LPARAM lParam)
 {
-    lParam = lParam;
-    wParam = wParam;
-    hwnd = hwnd;
-
     (void)::MessageBox(nullptr, TEXT("Tick"), TEXT("WM_TIMER"), 0);
 
     return 0;

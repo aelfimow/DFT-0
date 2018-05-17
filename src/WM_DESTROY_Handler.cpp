@@ -13,12 +13,8 @@ WM_DESTROY_Handler::~WM_DESTROY_Handler()
 {
 }
 
-LRESULT WM_DESTROY_Handler::operator()(HWND hwnd, WPARAM wParam, LPARAM lParam)
+LRESULT WM_DESTROY_Handler::operator()([[maybe_unused]] HWND hwnd, [[maybe_unused]] WPARAM wParam, [[maybe_unused]] LPARAM lParam)
 {
-    hwnd = hwnd;
-    wParam = wParam;
-    lParam = lParam;
-
     PostQuitMessage(0);
 
     return 0;
