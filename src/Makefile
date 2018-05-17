@@ -18,8 +18,10 @@ OBJ_FILES += f.o
 OBJ_FILES += g.o
 OBJ_FILES += h.o
 OBJ_FILES += i.o
+OBJ_FILES += j.o
 
 all:
+	c++ -c DFT_File.cpp -o j.o ${CXXFLAGS}
 	c++ -c WM_CREATE_Handler.cpp -o i.o ${CXXFLAGS}
 	c++ -c WM_PAINT_Handler.cpp -o h.o ${CXXFLAGS}
 	c++ -c WM_TIMER_Handler.cpp -o g.o ${CXXFLAGS}
