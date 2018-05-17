@@ -18,6 +18,10 @@ DFT_File::DFT_File(FileReader *pFileReader) :
     m_FileReader { pFileReader },
     m_DFT_Bank { }
 {
+    for (auto k = k_min; k < k_max; ++k)
+    {
+        m_DFT_Bank.push_back(new DiscreteFourierTransform { k, N });
+    }
 }
 
 DFT_File::~DFT_File()
