@@ -1,7 +1,11 @@
 #include <Windows.h>
+#include <vector>
+#include <cstdint>
 
 #include "WndProcHandler.h"
 #include "WM_CREATE_Handler.h"
+#include "DFT_File.h"
+#include "FileReader.h"
 
 
 WM_CREATE_Handler::WM_CREATE_Handler() :
@@ -39,7 +43,7 @@ LRESULT WM_CREATE_Handler::operator()(HWND hwnd, [[maybe_unused]] WPARAM wParam,
 
     if (result != 0)
     {
-        // ofn.lpstrFile and ofn.lpstrFileTitle are valid
+        DFT_File::Create(new FileReader { ofn.lpstrFile });
     }
 
     return 0;
