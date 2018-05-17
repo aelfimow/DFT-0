@@ -6,7 +6,7 @@
 class FileReader
 {
     public:
-        FileReader(const TCHAR *pName);
+        explicit FileReader(const TCHAR *pName);
         ~FileReader();
 
         std::vector<uint8_t> read(size_t maxBytes);
