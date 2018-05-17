@@ -17,8 +17,10 @@ OBJ_FILES += e.o
 OBJ_FILES += f.o
 OBJ_FILES += g.o
 OBJ_FILES += h.o
+OBJ_FILES += i.o
 
 all:
+	c++ -c WM_CREATE_Handler.cpp -o i.o ${CXXFLAGS}
 	c++ -c WM_PAINT_Handler.cpp -o h.o ${CXXFLAGS}
 	c++ -c WM_TIMER_Handler.cpp -o g.o ${CXXFLAGS}
 	c++ -c WM_COMMAND_Handler.cpp -o f.o ${CXXFLAGS}
