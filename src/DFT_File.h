@@ -15,6 +15,8 @@ class DFT_File
         static void Create(FileReader *pFileReader);
         static void Destroy();
 
+        static void Compute();
+
     private:
         static DFT_File *Inst;
 
