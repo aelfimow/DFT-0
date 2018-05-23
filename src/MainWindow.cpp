@@ -59,10 +59,8 @@ void MainWindow::MessageBox_Error(const TCHAR *errStr)
 
 void MainWindow::Create(HINSTANCE hInstance, int iCmdShow)
 {
-    if (nullptr == Inst)
-    {
-        Inst = new MainWindow { hInstance, iCmdShow };
-    }
+    delete Inst;
+    Inst = new MainWindow { hInstance, iCmdShow };
 }
 
 void MainWindow::Show()

@@ -36,10 +36,8 @@ DFT_File::~DFT_File()
 
 void DFT_File::Create(FileReader *pFileReader)
 {
-    if (Inst == nullptr)
-    {
-        Inst = new DFT_File { pFileReader };
-    }
+    delete Inst;
+    Inst = new DFT_File { pFileReader };
 }
 
 void DFT_File::Destroy()
