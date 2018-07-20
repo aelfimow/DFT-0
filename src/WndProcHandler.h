@@ -9,7 +9,7 @@ class WndProcHandler
         WndProcHandler() { }
         virtual ~WndProcHandler() { }
 
-        virtual LRESULT operator()(HWND hwnd, WPARAM wParam, LPARAM lParam) = 0;
+        virtual LRESULT operator()(const WndProcParam &param) = 0;
 
     public:
         WndProcHandler(const WndProcHandler &instance) = delete;
