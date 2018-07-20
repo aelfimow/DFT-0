@@ -11,7 +11,7 @@ class WM_TIMER_Handler: public WndProcHandler
         WM_TIMER_Handler();
         ~WM_TIMER_Handler();
 
-        LRESULT operator()(const WndProcParam &param);
+        LRESULT operator()(const WndProcParam &param) override;
 
     public:
         WM_TIMER_Handler(const WM_TIMER_Handler &instance) = delete;

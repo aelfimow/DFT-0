@@ -11,7 +11,7 @@ class WM_CREATE_Handler: public WndProcHandler
         WM_CREATE_Handler();
         ~WM_CREATE_Handler();
 
-        LRESULT operator()(const WndProcParam &param);
+        LRESULT operator()(const WndProcParam &param) override;
 
     public:
         WM_CREATE_Handler(const WM_CREATE_Handler &instance) = delete;

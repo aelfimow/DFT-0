@@ -11,7 +11,7 @@ class WM_COMMAND_Handler: public WndProcHandler
         WM_COMMAND_Handler();
         ~WM_COMMAND_Handler();
 
-        LRESULT operator()(const WndProcParam &param);
+        LRESULT operator()(const WndProcParam &param) override;
 
     private:
         const DWORD m_TimerID;
