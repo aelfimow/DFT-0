@@ -3,6 +3,7 @@
 #include <list>
 #include <cstdint>
 
+#include "WndProcParam.h"
 #include "WndProcHandler.h"
 #include "WM_CREATE_Handler.h"
 #include "DFT_File.h"
@@ -18,7 +19,7 @@ WM_CREATE_Handler::~WM_CREATE_Handler()
 {
 }
 
-LRESULT WM_CREATE_Handler::operator()(HWND hwnd, [[maybe_unused]] WPARAM wParam, [[maybe_unused]] LPARAM lParam)
+LRESULT WM_CREATE_Handler::operator()(const WndProcParam &param)
 {
     TCHAR szFileName[MAX_PATH];
     ::ZeroMemory(szFileName, sizeof(szFileName));
@@ -29,7 +30,7 @@ LRESULT WM_CREATE_Handler::operator()(HWND hwnd, [[maybe_unused]] WPARAM wParam,
     OPENFILENAME ofn;
     ::ZeroMemory(&ofn, sizeof(ofn));
 
-    ofn.hwndOwner      = hwnd;
+    ofn.hwndOwner      = param.hwnd();
     ofn.lpstrFilter    = TEXT("*");
 
     ofn.lpstrFile      = szFileName;

@@ -3,13 +3,15 @@
 #else
 #define WM_PAINT_HANDLER_H
 
+class WndProcParam;
+
 class WM_PAINT_Handler: public WndProcHandler
 {
     public:
         WM_PAINT_Handler();
         ~WM_PAINT_Handler();
 
-        LRESULT operator()(HWND hwnd, WPARAM wParam, LPARAM lParam) override;
+        LRESULT operator()(const WndProcParam &param);
 
     public:
         WM_PAINT_Handler(const WM_PAINT_Handler &instance) = delete;

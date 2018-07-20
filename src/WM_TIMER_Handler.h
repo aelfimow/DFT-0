@@ -3,13 +3,15 @@
 #else
 #define WM_TIMER_HANDLER_H
 
+class WndProcParam;
+
 class WM_TIMER_Handler: public WndProcHandler
 {
     public:
         WM_TIMER_Handler();
         ~WM_TIMER_Handler();
 
-        LRESULT operator()(HWND hwnd, WPARAM wParam, LPARAM lParam) override;
+        LRESULT operator()(const WndProcParam &param);
 
     public:
         WM_TIMER_Handler(const WM_TIMER_Handler &instance) = delete;
