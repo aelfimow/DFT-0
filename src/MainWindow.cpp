@@ -4,6 +4,7 @@
 
 #include "main.h"
 #include "MainWindow.h"
+#include "WndProcParam.h"
 #include "WndProcHandler.h"
 #include "WM_DESTROY_Handler.h"
 #include "WM_COMMAND_Handler.h"
@@ -151,7 +152,9 @@ LRESULT CALLBACK MainWindow::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPA
     {
         WndProcHandler &handler { *it->second };
 
-        auto result = handler(hwnd, wParam, lParam);
+        const WndProcParam param(hwnd, wParam, lParam);
+
+        auto result = handler(param);
 
         return result;
     }
