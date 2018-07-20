@@ -20,9 +20,10 @@ OBJ_FILES += h.o
 OBJ_FILES += i.o
 OBJ_FILES += j.o
 OBJ_FILES += k.o
+OBJ_FILES += l.o
 
 all:
-	c++ -c PCM24LE_to_FP.cpp -o k.o ${CXXFLAGS}
+	c++ -c WndProcParam.cpp -o l.o ${CXXFLAGS}
 	c++ -c DFT_File.cpp -o j.o ${CXXFLAGS}
 	c++ -c WM_CREATE_Handler.cpp -o i.o ${CXXFLAGS}
 	c++ -c WM_PAINT_Handler.cpp -o h.o ${CXXFLAGS}
